@@ -249,26 +249,37 @@ void readToFs()
 int checkEdges()
 {
   int front1 = digitalRead(FRONT_ARRAY_1);
-
   int front2 = digitalRead(FRONT_ARRAY_2);
-
   int front3 = digitalRead(FRONT_ARRAY_3);
 
   int frontLeft = digitalRead(FRONT_LEFT_CORNER);
-
   int frontRight = digitalRead(FRONT_RIGHT_CORNER);
 
   int rear1 = digitalRead(REAR_ARRAY_1);
-
   int rear2 = digitalRead(REAR_ARRAY_2);
-
   int rear3 = digitalRead(REAR_ARRAY_3);
 
   int rearLeft = digitalRead(REAR_LEFT_CORNER);
-
   int rearRight = digitalRead(REAR_RIGHT_CORNER);
 
 
+  // BOTH LEFT CORNERS
+  if (frontLeft == WHITE_LEVEL &&
+      rearLeft == WHITE_LEVEL)
+  {
+    return 2;
+  }
+
+
+  // BOTH RIGHT CORNERS
+  if (frontRight == WHITE_LEVEL &&
+      rearRight == WHITE_LEVEL)
+  {
+    return 3;
+  }
+
+
+  // FRONT
   if (front1 == WHITE_LEVEL ||
       front2 == WHITE_LEVEL ||
       front3 == WHITE_LEVEL ||
@@ -279,20 +290,7 @@ int checkEdges()
   }
 
 
-  if (frontLeft == WHITE_LEVEL ||
-      rearLeft == WHITE_LEVEL)
-  {
-    return 2;
-  }
-
-
-  if (frontRight == WHITE_LEVEL ||
-      rearRight == WHITE_LEVEL)
-  {
-    return 3;
-  }
-
-
+  // REAR
   if (rear1 == WHITE_LEVEL ||
       rear2 == WHITE_LEVEL ||
       rear3 == WHITE_LEVEL ||
@@ -305,7 +303,6 @@ int checkEdges()
 
   return 0;
 }
-
 
 void handleEdge(int edge)
 {
