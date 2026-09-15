@@ -2,30 +2,30 @@
 #include <Arduino.h>
 #include <Wire.h>
 
-#define LEFT_EN   25
-#define LEFT_IN1  26
-#define LEFT_IN2  27
+#define LEFT_EN   33
+#define LEFT_IN1  32
+#define LEFT_IN2  35
 
-#define RIGHT_EN  32
-#define RIGHT_IN1 33
-#define RIGHT_IN2 23
+#define RIGHT_EN  36
+#define RIGHT_IN1 34
+#define RIGHT_IN2 39
 
 #define PWM_FREQ 5000
 #define PWM_RES  8
 
-#define FRONT_ARRAY_1  -1
-#define FRONT_ARRAY_2  -1
-#define FRONT_ARRAY_3  -1
+#define FRONT_ARRAY_1  25
+#define FRONT_ARRAY_2  26
+#define FRONT_ARRAY_3  27
 
-#define FRONT_LEFT_CORNER  -1
-#define FRONT_RIGHT_CORNER -1
+#define FRONT_LEFT_CORNER  23
+#define FRONT_RIGHT_CORNER 2
 
-#define REAR_ARRAY_1  -1
-#define REAR_ARRAY_2  -1
-#define REAR_ARRAY_3  -1
+#define REAR_ARRAY_1  14
+#define REAR_ARRAY_2  12
+#define REAR_ARRAY_3  13
 
-#define REAR_LEFT_CORNER  -1
-#define REAR_RIGHT_CORNER -1
+#define REAR_LEFT_CORNER  5
+#define REAR_RIGHT_CORNER 15
 
 #define TOF_SDA_1 21
 #define TOF_SCL_1 22
